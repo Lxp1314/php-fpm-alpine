@@ -9,7 +9,9 @@ RUN apk --update add libxml2-dev \
         freetds-dev \
 	libjpeg-turbo-dev \
 	libpng-dev \
-	freetype-dev
+	freetype-dev \
+	libmcrypt-dev
+RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/freetype2/freetype --with-jpeg-dir=/usr/include --with-png-dir=/usr/include
 RUN docker-php-ext-install soap mysqli pdo_dblib pdo_mysql gd zip
 RUN cp /usr/local/etc/php/php.ini-production /usr/local/etc/php/php.ini
 
