@@ -10,7 +10,7 @@ RUN apk --update add libxml2-dev \
 	libjpeg-turbo-dev \
 	libpng-dev \
 	freetype-dev
-RUN docker-php-ext-install soap mysqli pdo_dblib pdo_mysql gd
+RUN docker-php-ext-install soap mysqli pdo_dblib pdo_mysql gd zip
 RUN cp /usr/local/etc/php/php.ini-production /usr/local/etc/php/php.ini
 
 # 安装composer
